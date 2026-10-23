@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#5b3fd9">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Cue Card">
+  <title>Cue Card - Street Interview</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="icon-192.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Cue Card</h1>
+      <p>Parent &amp; child street interview</p>
+    </div>
+    <span id="cloud-pill" class="cpill" title="Cloud sync"></span>
+  </header>
+
+  <main id="view" aria-live="polite"></main>
+  <div id="bootfail" class="bootfail">If this line stays on screen, the app scripts did not load. Check your connection, or try Chrome.</div>
+
+  <nav class="tabs" id="tabs" aria-label="Sections"></nav>
+
+  <div id="sheet-root"></div>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <input type="file" id="import-file" accept="application/json,.json" hidden>
+
+  <noscript>This app needs JavaScript.</noscript>
+  <script src="vendor/workbuddy-cloud-sdk.global.js"></script>
+  <script src="seed.js"></script>
+  <script src="cloud-config.js"></script>
+  <script src="cloud.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
