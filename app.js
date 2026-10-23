@@ -416,6 +416,11 @@
   function cloudCard() {
     var c = window.CueCardCloud;
     if (!c) return '';
+    // On a mirror host (not the cloud-bound release domain) sync can never work: keep it to one line.
+    if (!c.originOk()) {
+      return '<h2 class="sec">云同步</h2><div class="card"><p class="small muted" style="margin:0">' +
+        esc(c.statusText()) + '</p></div>';
+    }
     var on = c.hasSession();
     return '<h2 class="sec">云同步</h2><div class="card">' +
       (on ? '<div class="small muted" style="margin-bottom:8px">' + esc(c.label()) + '</div>' : '') +
